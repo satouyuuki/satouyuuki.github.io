@@ -5,11 +5,31 @@
         
             {
                 "id": 0,
+                "href": "https://satouyuuki.github.io/post/readable-code-thoughts/",
+                "title": "気合いで読むthe art of readable code",
+                "section": "post",
+                "date" : "2022.05.17",
+                "body": "なぜ本を読むのか プログラミングの命名について指摘されることが増えた\n本のタイトル readable code PDFリンク\n  広い意味の動詞をなるべく使わない bad: GetPage() // どこから取得するのかわからない good: FetchPage(), DownloadPage() // インターネットから取ってくる\n  意味のない変数名を避けて意味のある変数名にしよう bad: retval(意味: return value) good: sum_square(意味: 平方根の合計)\n  ループで使う変数もわかりやすく命名しよう bad: i, j, k good: clubs-\u0026gt; ci, members-\u0026gt; mi, users-\u0026gt;ui\n  変数名はdirect, explicitな意味を使う bad: \u0026ndash;run_locally good: \u0026ndash;extra_logging\n  格言: 変数名は小さなコメントのようなものだ   変数に含められる情報ならコメントではなく変数名に含める bad: string id; // Example: \u0026ldquo;af84ef845cd8\u0026rdquo; good: hex_id\n  変数名に情報を含めるとバグを見つけやすい bad: var start = (new Date()).getTime(); good: var start_ms = (new Date()).getTime(); //返り値がmillisecondsだということが明らかになる\n  Q. 変数の長さは結局どのぐらいの長さにすればいいのか\n  A. 変数のスコープが狭ければ短い名前でも良い。グローバルで使われる変数ほど詳細度をあげる。 ※長いと打ち込むのが疲れるからは長い変数名を避ける理由にならない(エディターが候補を出してくれるから)\n  新しいチームメイトがすぐ理解できないような命名なら使わない bad: BEManagement good: BackEndManagement\n  "
+            }
+    
+        ,
+            {
+                "id": 1,
                 "href": "https://satouyuuki.github.io/post/hoge/",
                 "title": "title",
                 "section": "post",
                 "date" : "2019.03.05",
                 "body": "hoge hoge\n"
+            }
+    
+        ,
+            {
+                "id": 2,
+                "href": "https://satouyuuki.github.io/post/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
+                "title": "title",
+                "section": "post",
+                "date" : "2019.03.05",
+                "body": "アジャイルについてのまとめ  一番問題となっていることは何か すぐ取り掛かれることは何か  なぜ本を読むのか 開発がプランニング通りにいかない。\n本のタイトル 一番やさしいアジャイル開発の教本\n本を読む目的は？ 開発がプランニング通りにいかない問題の解決 バグが多く発生してしまう問題への対策 少人数、若手だけのスクラムでアジャイル開発をよくしていくための方法\n表紙・裏表紙・著者のプロフィール・前書き・後書き 株式会社エナジャイル 市谷トシヒロ 株式会社エナジャイル アライタケシ ナビタイム 小田中育生\n 前書き チームを成長させ、ソフトウェア開発のレベルを上げる方法論 エンジニア以外でも実践できるアジャイルについても書かれてる なぜアジャイルなのか？の問いの答え 後書き why how what setupの順番で説明されてる チーム、インクリメンタル、いてレーティぶが大事  誰がいつどんなことを書いたのか 目次を確認（何がどこに書かれてるのかの構造を把握する）  アジャイル開発の世界-\u0026gt;アジャイルとはの前提知識の部分 なぜアジャイルなのか→whyの部分 アジャイル開発がもたらす変化-\u0026gt;???? アジャイル開発の中核にあるコンセプト-\u0026gt;チーム、インクリメンタル、いてレーティブの説明 小さく始めるアジャイル開発-\u0026gt;howの部分(どうやって導入していくのか) 上手に乗りこなすためのカイゼン手法-\u0026gt;数ある会社の制約をアジャイルではどう交わしていくのか アジャイル開発の理解を深める-\u0026gt;よくある問題に対する答え アジャイル開発はあなたから始める-\u0026gt;まとめ、実際に動き出せと激励をする  "
             }
     
 ]
