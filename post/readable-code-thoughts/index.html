@@ -1,21 +1,21 @@
 <!doctype html><html lang=en-us><head><meta charset=utf-8><title>気合いで読むthe art of readable code</title><meta name=description content="気合いで読むthe art of readable code"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=alternate type=application/rss+xml href=https://satouyuuki.github.io/index.xml title="My New Hugo Site"><meta name=twitter:card content="summary"><meta name=twitter:title content="気合いで読むthe art of readable code"><meta name=twitter:description content="気合いで読むthe art of readable code"><link rel=stylesheet href=https://satouyuuki.github.io/fontawesome/css/all.min.css><link crossorigin=anonymous href=/css/styles.min.css integrity rel="preload stylesheet" as=style><link id=dark-mode-theme crossorigin=anonymous href=/css/dark.min.css integrity rel="preload stylesheet" as=style><script>var darkTheme=document.getElementById("dark-mode-theme"),storedTheme=localStorage.getItem("dark-mode-storage");storedTheme==="dark"?darkTheme.disabled=!1:storedTheme==="light"&&(darkTheme.disabled=!0)</script><script defer crossorigin=anonymous src=/js/theme.js integrity></script>
-<script defer crossorigin=anonymous src=/js/instantpage.min.js integrity></script><meta name=generator content="Hugo 0.99.0"></head><body><header><nav class=navbar><div class=nav><ul class=nav-links></ul></div></nav><div class=intro-header><div class=container><div class=post-heading><h1>気合いで読むthe art of readable code</h1><span class=meta-post><em class="fa fa-calendar-alt"></em>&nbsp;May 17, 2022</span></div></div></div></header><div class=container role=main><article class=article class=blog-post><h1 id=なぜ本を読むのか>なぜ本を読むのか</h1><p>プログラミングの命名について指摘されることが増えた</p><h1 id=本のタイトル>本のタイトル</h1><p>readable code
-<a href=https://mcusoft.files.wordpress.com/2015/04/the-art-of-readable-code.pdf>PDFリンク</a></p><ul><li><p>広い意味の動詞をなるべく使わない
-bad: GetPage() // どこから取得するのかわからない
-good: FetchPage(), DownloadPage() // インターネットから取ってくる</p></li><li><p>意味のない変数名を避けて意味のある変数名にしよう
-bad: retval(意味: return value)
-good: sum_square(意味: 平方根の合計)</p></li><li><p>ループで使う変数もわかりやすく命名しよう
-bad: i, j, k
-good: clubs-> ci, members-> mi, users->ui</p></li><li><p>変数名はdirect, explicitな意味を使う
-bad: &ndash;run_locally
-good: &ndash;extra_logging</p></li></ul><h2 id=格言-変数名は小さなコメントのようなものだ>格言: 変数名は小さなコメントのようなものだ</h2><ul><li><p>変数に含められる情報ならコメントではなく変数名に含める
-bad: string id; // Example: &ldquo;af84ef845cd8&rdquo;
-good: hex_id</p></li><li><p>変数名に情報を含めるとバグを見つけやすい
-bad: var start = (new Date()).getTime();
-good: var start_ms = (new Date()).getTime(); //返り値がmillisecondsだということが明らかになる</p></li><li><p>Q. 変数の長さは結局どのぐらいの長さにすればいいのか</p></li><li><p>A. 変数のスコープが狭ければ短い名前でも良い。グローバルで使われる変数ほど詳細度をあげる。
-※長いと打ち込むのが疲れるからは長い変数名を避ける理由にならない(エディターが候補を出してくれるから)</p></li><li><p>新しいチームメイトがすぐ理解できないような命名なら使わない
-bad: BEManagement
-good: BackEndManagement</p></li></ul><div class=blog-tags><a href=https://satouyuuki.github.io/tags/readable-code/>readable code</a>&nbsp;</div></article></div><footer><div class=social-icons></div><div class=container><p class="credits copyright"><a href=https://satouyuuki.github.io/about></a>
+<script defer crossorigin=anonymous src=/js/instantpage.min.js integrity></script><meta name=generator content="Hugo 0.99.0"></head><body><header><nav class=navbar><div class=nav><ul class=nav-links></ul></div></nav><div class=intro-header><div class=container><div class=post-heading><h1>気合いで読むthe art of readable code</h1><span class=meta-post><em class="fa fa-calendar-alt"></em>&nbsp;May 17, 2022</span></div></div></div></header><div class=container role=main><article class=article class=blog-post><h1 id=なぜ本を読むのか>なぜ本を読むのか</h1><p>プログラミングの命名について指摘されることが増えた。英語のリーディングの練習</p><h1 id=本のタイトル>本のタイトル</h1><p>readable code
+<a href=https://mcusoft.files.wordpress.com/2015/04/the-art-of-readable-code.pdf>PDFリンク</a></p><ul><li>広い意味の動詞をなるべく使わない</li></ul><pre tabindex=0><code>bad: GetPage() // どこから取得するのかわからない
+good: FetchPage(), DownloadPage() // インターネットから取ってくる
+</code></pre><ul><li>意味のない変数名を避けて意味のある変数名にしよう</li></ul><pre tabindex=0><code>bad: retval(意味: return value)
+good: sum_square(意味: 平方根の合計)
+</code></pre><ul><li>ループで使う変数もわかりやすく命名しよう</li></ul><pre tabindex=0><code>bad: i, j, k
+good: clubs-&gt; ci, members-&gt; mi, users-&gt;ui
+</code></pre><ul><li>変数名はdirect, explicitな意味を使う</li></ul><pre tabindex=0><code>bad: --run_locally
+good: --extra_logging
+</code></pre><h2 id=格言-変数名は小さなコメントのようなものだ>格言: 変数名は小さなコメントのようなものだ</h2><ul><li>変数に含められる情報ならコメントではなく変数名に含める</li></ul><pre tabindex=0><code>bad: string id; // Example: &#34;af84ef845cd8&#34;
+good: hex_id
+</code></pre><ul><li>変数名に情報を含めるとバグを見つけやすい</li></ul><pre tabindex=0><code>bad: var start = (new Date()).getTime();
+good: var start_ms = (new Date()).getTime();  //返り値がmillisecondsだということが明らかになる
+</code></pre><ul><li><p>Q. 変数の長さは結局どのぐらいの長さにすればいいのか</p></li><li><p>A. 変数のスコープが狭ければ短い名前でも良い。グローバルで使われる変数ほど詳細度をあげる。
+※長いと打ち込むのが疲れるからは長い変数名を避ける理由にならない(エディターが候補を出してくれるから)</p></li><li><p>新しいチームメイトがすぐ理解できないような命名なら使わない</p></li></ul><pre tabindex=0><code>bad: BEManagement
+good: BackEndManagement
+</code></pre><div class=blog-tags><a href=https://satouyuuki.github.io/tags/readable-code/>readable code</a>&nbsp;</div></article></div><footer><div class=social-icons></div><div class=container><p class="credits copyright"><a href=https://satouyuuki.github.io/about></a>
 &nbsp;&copy;
 2022
 &nbsp;/&nbsp;
