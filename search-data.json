@@ -5,6 +5,16 @@
         
             {
                 "id": 0,
+                "href": "https://satouyuuki.github.io/post/readable-code-testing-and-readability/",
+                "title": "気合いで読むthe art of readable code part2",
+                "section": "post",
+                "date" : "2022.05.19",
+                "body": "本を読む目的 テストコードを書こうと思ったので読んだ\n本のタイトル readable code PDFリンク\nメモ  テストコードはreadableに書く。他の人が快適に変更を加えられるように。 テストコードの処理を見やすくするようにhelper functionを追加する  bad: vector\u0026lt;ScoredDocument\u0026gt; docs; docs.resize(5); docs[0].url = \u0026#34;http://example.com\u0026#34;; docs[0].score = 3; ... good: void MakeScoredDoc(ScoredDocument* sd, double score, string url) { sd-\u0026gt;score = score; sd-\u0026gt;url = url; } voctor\u0026lt;ScoredDocument\u0026gt; docs; docs.resize(5); MakeScoredDoc(\u0026amp;docs[0], 3, \u0026#34;http://example.com\u0026#34;);  helper functionの機能を使いやすくする  まあまあ: void MakeScoredDoc(ScoredDocument* sd, double score, string url) { sd-\u0026gt;score = score; sd-\u0026gt;url = url; } good: void AddScoredDoc(vector\u0026lt;ScoredDocument\u0026gt;\u0026amp; docs, double score) { ScoredDocument sd; sd.score = score; sd.url = \u0026#34;http://example.com\u0026#34;; docs.push_back(sd); } vector\u0026lt;ScoredDocument\u0026gt; docs; AddScoredDoc(docs, 3);  命名をわかりやすくする  good: void CheckScoresBeforeAfter(string input, string expected_output) { vector\u0026lt;ScoredDocument\u0026gt; docs = ScoredDocsFromString(input); SortAndFilterDocs(\u0026amp;docs); string output = ScoredDocsToString(docs); assert(output == expected_output); }  assertionエラー文言もわかりやすくする  まあまあ: assert(output == expected_output); good:(ex: Boost c++ library) BOOST_REQUEST_EQUAL(output, expected_output);  ネーミングに規則を持たせる  bad: Test1() {...} good: Test__\u0026lt;FunctionName\u0026gt;_\u0026lt;Situation\u0026gt;() {...} "
+            }
+    
+        ,
+            {
+                "id": 1,
                 "href": "https://satouyuuki.github.io/post/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
                 "title": "どうしたらスプリントは計画通りに進のか",
                 "section": "post",
@@ -14,7 +24,7 @@
     
         ,
             {
-                "id": 1,
+                "id": 2,
                 "href": "https://satouyuuki.github.io/post/readable-code-thoughts/",
                 "title": "気合いで読むthe art of readable code",
                 "section": "post",
@@ -24,7 +34,7 @@
     
         ,
             {
-                "id": 2,
+                "id": 3,
                 "href": "https://satouyuuki.github.io/post/hoge/",
                 "title": "title",
                 "section": "post",

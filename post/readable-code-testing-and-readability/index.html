@@ -1,0 +1,54 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><title>気合いで読むthe art of readable code part2</title><meta name=description content="気合いで読むthe art of readable code part2"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=alternate type=application/rss+xml href=https://satouyuuki.github.io/index.xml title="My New Hugo Site"><meta name=twitter:card content="summary"><meta name=twitter:title content="気合いで読むthe art of readable code part2"><meta name=twitter:description content="気合いで読むthe art of readable code part2"><link rel=stylesheet href=https://satouyuuki.github.io/fontawesome/css/all.min.css><link crossorigin=anonymous href=/css/styles.min.css integrity rel="preload stylesheet" as=style><link id=dark-mode-theme crossorigin=anonymous href=/css/dark.min.css integrity rel="preload stylesheet" as=style><script>var darkTheme=document.getElementById("dark-mode-theme"),storedTheme=localStorage.getItem("dark-mode-storage");storedTheme==="dark"?darkTheme.disabled=!1:storedTheme==="light"&&(darkTheme.disabled=!0)</script><script defer crossorigin=anonymous src=/js/theme.js integrity></script>
+<script defer crossorigin=anonymous src=/js/instantpage.min.js integrity></script><meta name=generator content="Hugo 0.99.1"></head><body><header><nav class=navbar><div class=nav><ul class=nav-links></ul></div></nav><div class=intro-header><div class=container><div class=post-heading><h1>気合いで読むthe art of readable code part2</h1><span class=meta-post><em class="fa fa-calendar-alt"></em>&nbsp;May 19, 2022</span></div></div></div></header><div class=container role=main><article class=article class=blog-post><h1 id=本を読む目的>本を読む目的</h1><p>テストコードを書こうと思ったので読んだ</p><h1 id=本のタイトル>本のタイトル</h1><p>readable code
+<a href=https://mcusoft.files.wordpress.com/2015/04/the-art-of-readable-code.pdf>PDFリンク</a></p><h1 id=メモ>メモ</h1><ul><li>テストコードはreadableに書く。他の人が快適に変更を加えられるように。</li><li>テストコードの処理を見やすくするようにhelper functionを追加する</li></ul><pre tabindex=0><code>bad: 
+vector&lt;ScoredDocument&gt; docs;
+docs.resize(5);
+docs[0].url = &#34;http://example.com&#34;;
+docs[0].score = 3;
+...
+good: 
+void MakeScoredDoc(ScoredDocument* sd, double score, string url) {
+    sd-&gt;score = score;
+    sd-&gt;url = url;
+}
+voctor&lt;ScoredDocument&gt; docs;
+docs.resize(5);
+MakeScoredDoc(&amp;docs[0], 3, &#34;http://example.com&#34;);
+</code></pre><ul><li>helper functionの機能を使いやすくする</li></ul><pre tabindex=0><code>まあまあ: 
+void MakeScoredDoc(ScoredDocument* sd, double score, string url) {
+    sd-&gt;score = score;
+    sd-&gt;url = url;
+}
+good: 
+void AddScoredDoc(vector&lt;ScoredDocument&gt;&amp; docs, double score) {
+    ScoredDocument sd;
+    sd.score = score;
+    sd.url = &#34;http://example.com&#34;;
+    docs.push_back(sd);
+}
+vector&lt;ScoredDocument&gt; docs;
+AddScoredDoc(docs, 3);
+</code></pre><ul><li>命名をわかりやすくする</li></ul><pre tabindex=0><code>good: 
+void CheckScoresBeforeAfter(string input, string expected_output) {
+    vector&lt;ScoredDocument&gt; docs = ScoredDocsFromString(input);
+    SortAndFilterDocs(&amp;docs);
+    string output = ScoredDocsToString(docs);
+    assert(output == expected_output);
+}
+</code></pre><ul><li>assertionエラー文言もわかりやすくする</li></ul><pre tabindex=0><code>まあまあ: 
+assert(output == expected_output);
+good:(ex: Boost c++ library)
+BOOST_REQUEST_EQUAL(output, expected_output);
+</code></pre><ul><li>ネーミングに規則を持たせる</li></ul><pre tabindex=0><code>bad: 
+Test1() {...}
+good:
+Test__&lt;FunctionName&gt;_&lt;Situation&gt;() {...}
+</code></pre><div class=blog-tags><a href=https://satouyuuki.github.io/tags/readable-code/>readable code</a>&nbsp;</div></article></div><footer><div class=social-icons></div><div class=container><p class="credits copyright"><a href=https://satouyuuki.github.io/about></a>
+&nbsp;&copy;
+2022
+&nbsp;/&nbsp;
+<a href=https://satouyuuki.github.io/>My New Hugo Site</a>
+&nbsp;&ndash;&nbsp;
+<em class="fas fa-moon" id=dark-mode-toggle></em></p><p class="credits theme-by">Powered By <a href=https://gohugo.io>Hugo</a>&nbsp;
+Theme
+<a href=https://github.com/matsuyoshi30/harbor>Harbor</a></p></div></footer></body></html>
